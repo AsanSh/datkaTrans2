@@ -18,7 +18,10 @@ app = FastAPI(title="Employee Registration System")
 # CORS middleware configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=[
+        "https://datka-trans2.vercel.app",
+        "http://localhost:5173",  # For local development
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
