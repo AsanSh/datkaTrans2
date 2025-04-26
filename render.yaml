@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: datka-trans2-backend
+    env: python
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: MONGODB_URI
+        sync: false
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: BOT_TOKEN
+        value: 7886092766:AAGMZU9RLz3Nvvx67o9R_zauxk2oFbJmgeE 
